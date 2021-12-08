@@ -36,11 +36,22 @@ public class HashCode {
 		// 	return (int)id*name.hashCode()* email.hashCode();
 		// }
 
-		//Objects의 해시코드 구현 메서드를 이용
+		// 전형적인 hashCode 메서드
 		@Override
 		public int hashCode() {
-			return Objects.hash(name, email);
+			int result = Long.hashCode(id);
+			result = 31 * result + name.hashCode();
+			result = 31 * result + email.hashCode();
+			return result;
 		}
+
+
+		// Objects의 해시코드 구현 메서드를 이용
+		// 속도가 느린 단점
+		// @Override
+		// public int hashCode() {
+		// 	return Objects.hash(name, email);
+		// }
 
 	}
 
