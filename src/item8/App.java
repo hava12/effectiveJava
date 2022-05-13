@@ -1,5 +1,6 @@
 package item8;
 
+import item8.finalizer.FinalizerIsBad;
 import java.lang.ref.ReferenceQueue;
 import java.lang.reflect.Field;
 
