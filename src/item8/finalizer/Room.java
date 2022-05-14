@@ -1,6 +1,4 @@
-package item8;
-
-import sun.misc.Cleaner;
+package item8.finalizer;
 
 public class Room implements AutoCloseable {
 	//private static final Cleaner cleaner = Cleaner.create();

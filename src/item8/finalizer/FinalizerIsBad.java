@@ -1,4 +1,4 @@
-package item8;
+package item8.finalizer;
 
 public class FinalizerIsBad {
 
