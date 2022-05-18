@@ -2,21 +2,30 @@ package item8.outerclass;
 
 import java.lang.reflect.Field;
 
-public class OuterCless {
+// 정적이 아닌 중첩 클래스
+// Inner  클래스는 Outer Class 에 굉장히 종속적
+public class OuterClass {
+
+	private void hi() {
+		System.out.println("hi");
+	}
 
 	class InnerCLass {
-
+		private void hello(){
+			OuterClass.this.hi();
+		}
 	}
 
 	public static void main(String[] args) {
-		OuterCless outerCless = new OuterCless();
-		InnerCLass innerCLass = outerCless.new InnerCLass();
+		OuterClass outerClass = new OuterClass();
+		InnerCLass innerCLass = outerClass.new InnerCLass();
+
 		System.out.println(innerCLass);
 
-		outerCless.printConstructor();
+		outerClass.printFields();
 	}
 
-	private void printConstructor() {
+	private void printFields() {
 		Field[] declaredFields = InnerCLass.class.getDeclaredFields();
 		for (Field field : declaredFields) {
 			System.out.println("field type : " + field.getType());
