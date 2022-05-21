@@ -1,12 +1,9 @@
 package item10;
-
-import java.awt.Color;
-
 public class ColorPoint extends Point {
 	private final Color color;
 
 	// equals 규약을 어긴 것은 아니지만 중요한 정보를 놓치게 됨.
-	public ColorPoint(int x, int y, Color color) {
+ 	public ColorPoint(int x, int y, Color color) {
 		super(x, y);
 		this.color = color;
 	}
