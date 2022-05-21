@@ -9,12 +9,21 @@ public class Point {
 		this.y = y;
 	}
 
+//	@Override
+//	public boolean equals(Object obj) {
+//		if( !(obj instanceof Point)) {
+//			return false;
+//		}
+//		Point p = (Point) obj;
+//		return p.x == x && p.y == y;
+//	}
+
+	// 잘못된 경우 - 리스코프 치환 원칙 위배
 	@Override
 	public boolean equals(Object obj) {
-		if( !(obj instanceof Point)) {
-			return false;
-		}
+		if (obj == null || obj.getClass() != getClass()) return false;
 		Point p = (Point) obj;
+
 		return p.x == x && p.y == y;
 	}
 }

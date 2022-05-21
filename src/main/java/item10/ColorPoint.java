@@ -1,5 +1,7 @@
 package item10;
 public class ColorPoint extends Point {
+	// 필드를 추가했을때 추이성, 대칭성을 충족시키는 방법이 존재하지 않는다.
+	// 때문에 composition을 권장한다.
 	private final Color color;
 
 	// equals 규약을 어긴 것은 아니지만 중요한 정보를 놓치게 됨.
@@ -15,6 +17,8 @@ public class ColorPoint extends Point {
 			return false;
 		}
 
+		// o가 일반 Point이면 색상을 무시하고 비교한다.
+		// 굉장히 위험한 코드.. StackOverFlow 발생 가능..
 		if (!(obj instanceof ColorPoint)) {
 			return obj.equals(this);
 		}
