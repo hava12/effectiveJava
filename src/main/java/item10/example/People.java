@@ -22,16 +22,10 @@ public class People {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-
-		if (o == null || !(o instanceof People)) {
-			return false;
-		}
-
-		People people = (People)o;
-		return regNo.equals(people.regNo);
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		People people = (People) o;
+		return Objects.equals(regNo, people.regNo);
 	}
 
 	@Override

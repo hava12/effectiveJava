@@ -20,6 +20,7 @@ public class ColorPoint extends Point {
 		// o가 일반 Point이면 색상을 무시하고 비교한다.
 		// 굉장히 위험한 코드.. StackOverFlow 발생 가능..
 		if (!(obj instanceof ColorPoint)) {
+			System.out.println("Color Point Equals");
 			return obj.equals(this);
 		}
 
