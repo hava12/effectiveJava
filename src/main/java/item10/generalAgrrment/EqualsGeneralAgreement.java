@@ -1,4 +1,4 @@
-package item10;
+package item10.generalAgrrment;
 
 public class EqualsGeneralAgreement {
     // 반사성
